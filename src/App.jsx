@@ -43,9 +43,7 @@ function App() {
        <section>
         <TeamShowcase/>
       </section>
-<section className=" py-20">
-  <TeamShowcase />
-</section>
+
 <section>
         <Footer/>
       </section>

@@ -1,7 +1,10 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const Navbar = ({ onHomeClick, onAboutClick, onStatusClick, onBookClick }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const glowVariants = {
     rest: {
       scale: 1,
@@ -18,7 +21,7 @@ const Navbar = ({ onHomeClick, onAboutClick, onStatusClick, onBookClick }) => {
 
   const navItems = [
     { name: "Home", onClick: onHomeClick },
-    { name: "About Disease ", onClick: onAboutClick },
+    { name: "About Disease", onClick: onAboutClick },
     { name: "Status", onClick: onStatusClick },
     { name: "Book", onClick: onBookClick },
   ];
@@ -28,10 +31,11 @@ const Navbar = ({ onHomeClick, onAboutClick, onStatusClick, onBookClick }) => {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="mx-5 mt-3 px-6 py-3 flex justify-between items-center rounded-2xl shadow-lg 
-                 bg-gray-700/60 backdrop-blur-lg border border-white/20 fixed top-0 left-0 right-0 z-50"
+      className="fixed top-0 left-0 right-0 z-50 mx-4 mt-3 px-6 py-3 
+                 flex justify-between items-center rounded-2xl shadow-lg
+                 bg-gray-800/60 backdrop-blur-xl border border-white/20"
     >
-      {/* Brand Name */}
+      {/* 🌱 Brand Name */}
       <motion.div
         whileHover={{
           scale: 1.05,
@@ -44,8 +48,8 @@ const Navbar = ({ onHomeClick, onAboutClick, onStatusClick, onBookClick }) => {
         BioLife
       </motion.div>
 
-      {/* Navigation Menu */}
-      <motion.ul className="flex space-x-8 text-white font-semibold text-lg">
+      {/* 🧭 Desktop Menu */}
+      <ul className="hidden md:flex space-x-8 text-white font-semibold text-lg">
         {navItems.map((item, i) => (
           <motion.li
             key={i}
@@ -66,7 +70,44 @@ const Navbar = ({ onHomeClick, onAboutClick, onStatusClick, onBookClick }) => {
             />
           </motion.li>
         ))}
-      </motion.ul>
+      </ul>
+
+      {/* 🍔 Mobile Menu Button */}
+      <div className="md:hidden flex items-center">
+        <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* 📱 Mobile Dropdown Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-[70px] left-0 w-full rounded-2xl bg-gray-900/90 
+                       backdrop-blur-xl border-t border-green-400/20 py-6 md:hidden shadow-[0_0_20px_rgba(0,255,128,0.15)]"
+          >
+            <ul className="flex flex-col items-center space-y-5 text-lg font-semibold text-gray-200">
+              {navItems.map((item, i) => (
+                <motion.li
+                  key={i}
+                  whileHover={{ scale: 1.05, color: "#6ee7b7" }}
+                  onClick={() => {
+                    setIsOpen(false);
+                    item.onClick();
+                  }}
+                  className="cursor-pointer transition-all"
+                >
+                  {item.name}
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };
