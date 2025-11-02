@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const Navbar = () => {
+const Navbar = ({ onHomeClick, onAboutClick, onStatusClick, onBookClick }) => {
   const glowVariants = {
     rest: {
       scale: 1,
@@ -16,13 +16,20 @@ const Navbar = () => {
     },
   };
 
+  const navItems = [
+    { name: "Home", onClick: onHomeClick },
+    { name: "About Disease ", onClick: onAboutClick },
+    { name: "Status", onClick: onStatusClick },
+    { name: "Book", onClick: onBookClick },
+  ];
+
   return (
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="mx-5 mt-3 px-6 py-3 flex justify-between items-center rounded-2xl shadow-lg 
-                 bg-gray-700/60 backdrop-blur-lg border border-white/20"
+                 bg-gray-700/60 backdrop-blur-lg border border-white/20 fixed top-0 left-0 right-0 z-50"
     >
       {/* Brand Name */}
       <motion.div
@@ -32,23 +39,24 @@ const Navbar = () => {
         }}
         transition={{ type: "spring", stiffness: 200, damping: 16 }}
         className="text-3xl font-bold text-green-400 tracking-wide cursor-pointer"
+        onClick={onHomeClick}
       >
         BioLife
       </motion.div>
 
       {/* Navigation Menu */}
       <motion.ul className="flex space-x-8 text-white font-semibold text-lg">
-        {["Home", "About", "Research", "Products", "Contact"].map((item, i) => (
+        {navItems.map((item, i) => (
           <motion.li
             key={i}
             variants={glowVariants}
             initial="rest"
             whileHover="hover"
             animate="rest"
+            onClick={item.onClick}
             className="relative cursor-pointer transition-all duration-200"
           >
-            {item}
-            {/* Subtle Underline */}
+            {item.name}
             <motion.div
               className="absolute left-0 right-0 bottom-[-4px] h-[2px] bg-green-400/70 rounded-full"
               initial={{ scaleX: 0 }}
