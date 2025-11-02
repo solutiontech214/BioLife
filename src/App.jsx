@@ -5,6 +5,7 @@ import AboutBioLife from "./components/AboutBioLife";
 import ExoSkeletonStatus from "./components/ExoSkeletonStatus";
 import Book from "./components/Book";
 import Footer from "./components/Footer";
+import TeamShowcase from "./components/TeamShowcase";
 function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
@@ -39,9 +40,16 @@ function App() {
       <section ref={bookRef}>
         <Book />
       </section>
-      <section>
+       <section>
+        <TeamShowcase/>
+      </section>
+<section className=" py-20">
+  <TeamShowcase />
+</section>
+<section>
         <Footer/>
       </section>
+     
     </div>
     
   );

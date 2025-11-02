@@ -57,7 +57,7 @@ const HeroSection = () => {
       {/* LEFT SIDE TEXT */}
       <div ref={textRef} className="w-full md:w-[60ś%] space-y-8 text-left z-10">
         <h1 className="text-6xl md:text-7xl font-extrabold leading-tight text-justify bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(34,197,94,0.35)]">
-          Empowering Mobility.
+          Empowering Mobility,
           <br /> Restoring Hope.
         </h1>
 
