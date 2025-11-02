@@ -6,7 +6,7 @@ import gsap from "gsap";
 
 // 🧩 Model Component
 function Model({ scrollY, cursor, isFollowing }) {
-  const { scene } = useGLTF("/model.glb");
+  const { scene } = useGLTF("/model_1.glb");
   const modelRef = useRef();
   const initialRotation = (317 * Math.PI) / 180; // 317° rotation
   const scaleValue = useTransform(scrollY, [0, 600], [0.9, 1.1]);
