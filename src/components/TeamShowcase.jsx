@@ -10,11 +10,18 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/aditya-gambhire-ba1294315",
   },
   {
-    name: "Dr. Shrinivas Metan",
-    role: "Mentor",
-    image: "../Images/metansir.jpg",
+    name: "Trisha Adki",
+    role: "Designer, Researcher",
+    image: "../Images/trisha.jpg",
     linkedin:
-      "https://www.linkedin.com/in/dr-shriniwas-metan-a1791124?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "https://www.linkedin.com/in/trisha-adki-a959bb350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    name: "Sidramappa Potdar",
+    role: "Programmer, Marketing",
+    image: "../Images/sid.jpg",
+    linkedin:
+      "https://www.linkedin.com/in/sidramappa-potdar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Ritesh Kulkarni",
@@ -23,43 +30,33 @@ const teamMembers = [
     linkedin:
       "https://www.linkedin.com/in/ritesh-kulkarni-56b346311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
-  
-  
   {
-    name: "Trisha Adki",
-    role: "Designer, Researcher",
-    image: "../Images/trisha.jpg",
+    name: "Dr. Shrinivas Metan",
+    role: "Mentor",
+    image: "../Images/metansir.jpg",
     linkedin:
-      "https://www.linkedin.com/in/trisha-adki-a959bb350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "https://www.linkedin.com/in/dr-shriniwas-metan-a1791124?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
-  
   {
-    name: "Sidramappa Potdar",
-    role: "Programmer, Marketing",
-    image: "../Images/sid.jpg",
-    linkedin:
-      "https://www.linkedin.com/in/sidramappa-potdar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-  },{
     name: "Dr. Viteshkumar Gaikwad",
     role: "Guide",
     image: "../Images/gaikwadsir.jpg",
     linkedin: "https://www.linkedin.com/in/dr-viteshkumar-gaikwad",
   },
-  
 ];
 
 const TeamShowcase = () => {
   const controls = useAnimation();
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  // 🌊 Continuous smooth scrolling (fixed Trisha visibility + faster speed)
+  // 🌊 Continuous smooth scrolling (full visibility + faster)
   useEffect(() => {
     controls.start({
-      x: ["0%", "-80%"], // 
+      x: ["0%", "-100%"], // ✅ full scroll — all members visible
       transition: {
         repeat: Infinity,
         ease: "linear",
-        duration: 12, // ⚡ slightly faster than before (was 18)
+        duration: 8, // ⚡ faster but smooth
       },
     });
   }, [controls]);
@@ -72,7 +69,7 @@ const TeamShowcase = () => {
   const handleMouseLeave = () => {
     setHoveredIndex(null);
     controls.start({
-      x: ["0%", "-80%"],
+      x: ["0%", "-100%"],
       transition: {
         repeat: Infinity,
         ease: "linear",
