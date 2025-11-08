@@ -26,7 +26,7 @@ const teamMembers = [
   {
     name: "Ritesh Kulkarni",
     role: "Circuit Designer, Ideation",
-    image: "../Images/ritesh.jpg",
+    image: "../Images/sanju.jpg",
     linkedin:
       "https://www.linkedin.com/in/ritesh-kulkarni-56b346311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
