@@ -6,6 +6,8 @@ import ExoSkeletonStatus from "./components/ExoSkeletonStatus";
 import Book from "./components/Book";
 import Footer from "./components/Footer";
 import TeamShowcase from "./components/TeamShowcase";
+import JourneyTimeline from "./components/JourneyTimeline";
+
 function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
@@ -40,16 +42,17 @@ function App() {
       <section ref={bookRef}>
         <Book />
       </section>
-       <section>
-        <TeamShowcase/>
+      <section>
+        <TeamShowcase />
+      </section>
+      <section>
+        <JourneyTimeline />
       </section>
 
-<section>
-        <Footer/>
+      <section>
+        <Footer />
       </section>
-     
     </div>
-    
   );
 }
 
