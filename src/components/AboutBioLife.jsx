@@ -2,6 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { HeartPulse, Brain, Activity, HelpingHand } from "lucide-react";
 
+
+
+
+
 const AboutBioLife = () => {
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
@@ -113,4 +117,4 @@ const AboutBioLife = () => {
   );
 };
 
-export default AboutBioLife;
+export default  AboutBioLife;

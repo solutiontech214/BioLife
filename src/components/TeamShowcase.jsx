@@ -1,6 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
+
+
+export const AboutUs = () => (
+  <section className="bg-white py-24 px-8 text-center">
+    <h2 className="text-4xl font-bold text-sky-500 mb-4">About BioLife</h2>
+    <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+      Born from research and real need, BioLife is a team of engineers, designers, and medical experts transforming neurotechnology into daily independence. Our vision is to democratize mobility through intuitive wearable AI — with compassion and precision.
+    </p>
+    <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 className="text-xl font-semibold text-sky-600">🏆 Aakruti 2025 Finalists</h3>
+        <p className="text-slate-600">National innovation recognized for impact in assistive healthcare.</p>
+      </div>
+      <div>
+        <h3 className="text-xl font-semibold text-sky-600">🧠 Human-Centered Engineering</h3>
+        <p className="text-slate-600">Designed for usability, comfort, and long-term reliability.</p>
+      </div>
+      <div>
+        <h3 className="text-xl font-semibold text-sky-600">🤝 Guided by Experts</h3>
+        <p className="text-slate-600">Mentored by leading neurosurgeons and rehabilitation professionals.</p>
+      </div>
+    </div>
+  </section>
+);
+
 // 🧠 Team Data
 const teamMembers = [
   {
@@ -27,17 +52,18 @@ const teamMembers = [
     image: "../Images/sanju.jpg",
     linkedin: "https://www.linkedin.com/in/ritesh-kulkarni-56b346311",
   },
-  {
-    name: "Dr. Shrinivas Metan",
-    role: "Mentor",
-    image: "../Images/metansir.jpg",
-    linkedin: "https://www.linkedin.com/in/dr-shriniwas-metan-a1791124",
-  },
+
   {
     name: "Dr. Viteshkumar Gaikwad",
-    role: "Guide",
+    role: "Mentor",
     image: "../Images/gaikwadsir.jpg",
     linkedin: "https://www.linkedin.com/in/dr-viteshkumar-gaikwad",
+  },
+  {
+    name: "Dr. Shrinivas Metan",
+    role: "Guide",
+    image: "../Images/metansir.jpg",
+    linkedin: "https://www.linkedin.com/in/dr-shriniwas-metan-a1791124",
   },
 ];
 
@@ -159,4 +185,23 @@ const TeamShowcase = () => {
   );
 };
 
-export default TeamShowcase;
+export const CTASection = () => (
+  <section className="bg-white py-24 px-8 text-center">
+    <h2 className="text-4xl font-bold text-sky-600 mb-6">Get in Touch</h2>
+    <p className="text-slate-700 mb-8 max-w-xl mx-auto">
+      Join us in reimagining mobility. Book a demo, ask a question, or explore partnership opportunities with BioLife.
+    </p>
+    <button className="px-8 py-3 bg-sky-600 text-white rounded-xl font-semibold hover:bg-sky-700 transition">Contact Us</button>
+  </section>
+);
+
+export default function  TeamShow(){
+  return (
+    <>
+    <AboutUs/>
+
+    <TeamShowcase/>
+     <CTASection />
+    </>
+  )
+};

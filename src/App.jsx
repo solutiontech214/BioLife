@@ -7,6 +7,9 @@ import Book from "./components/Book";
 import Footer from "./components/Footer";
 import TeamShowcase from "./components/TeamShowcase";
 import JourneyTimeline from "./components/JourneyTimeline";
+import SolutionPage from "./components/SolutionPage";
+import AboutBioLifeTeam from "./components/AboutBioLife";
+import TeamShow from "./components/TeamShowcase";
 
 function App() {
   const homeRef = useRef(null);
@@ -38,28 +41,32 @@ function App() {
 
       {/* About */}
       <section ref={aboutRef}>
-        <AboutBioLife />
+        < AboutBioLife/>
+      </section>
+       <section ref={journeyRef}>
+        <SolutionPage />
       </section>
 
-      {/* Exoskeleton Status */}
-      <section ref={statusRef}>
-        <ExoSkeletonStatus />
-      </section>
+      
 
       {/* Booking Section (Important: relative for motion scroll fix) */}
     <section ref={bookRef} className="relative z-[100]">
   <Book />
 </section>
 
-
+{/* Exoskeleton Status */}
+      <section ref={statusRef}>
+        <ExoSkeletonStatus />
+      </section>
      
       {/* Journey Timeline */}
       <section ref={journeyRef}>
         <JourneyTimeline />
       </section>
+      
  {/* Team Showcase */}
       <section ref={teamRef}>
-        <TeamShowcase />
+        <TeamShow />
       </section>
 
       {/* Footer */}
