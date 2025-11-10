@@ -13,42 +13,56 @@ function App() {
   const aboutRef = useRef(null);
   const statusRef = useRef(null);
   const bookRef = useRef(null);
+  const teamRef = useRef(null);
+  const journeyRef = useRef(null);
 
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <div className="bg-black text-white overflow-x-hidden">
+    <div className="bg-[#EAF8FF] text-slate-800 overflow-x-hidden">
       <Navbar
         onHomeClick={() => scrollToSection(homeRef)}
         onAboutClick={() => scrollToSection(aboutRef)}
         onStatusClick={() => scrollToSection(statusRef)}
         onBookClick={() => scrollToSection(bookRef)}
+        onTeamClick={() => scrollToSection(teamRef)}
+        onJourneyClick={() => scrollToSection(journeyRef)}
       />
 
-      <section ref={homeRef}>
+      {/* Home */}
+      <section ref={homeRef} data-name="Home" className="pt-28">
         <HeroSection />
       </section>
 
+      {/* About */}
       <section ref={aboutRef}>
         <AboutBioLife />
       </section>
 
+      {/* Exoskeleton Status */}
       <section ref={statusRef}>
         <ExoSkeletonStatus />
       </section>
 
-      <section ref={bookRef}>
-        <Book />
-      </section>
-      <section>
-        <TeamShowcase />
-      </section>
-      <section>
+      {/* Booking Section (Important: relative for motion scroll fix) */}
+    <section ref={bookRef} className="relative z-[100]">
+  <Book />
+</section>
+
+
+     
+      {/* Journey Timeline */}
+      <section ref={journeyRef}>
         <JourneyTimeline />
       </section>
+ {/* Team Showcase */}
+      <section ref={teamRef}>
+        <TeamShowcase />
+      </section>
 
+      {/* Footer */}
       <section>
         <Footer />
       </section>
