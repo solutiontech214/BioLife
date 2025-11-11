@@ -32,6 +32,7 @@ function App() {
         onBookClick={() => scrollToSection(bookRef)}
         onTeamClick={() => scrollToSection(teamRef)}
         onJourneyClick={() => scrollToSection(journeyRef)}
+        
       />
 
       {/* Home */}
@@ -44,7 +45,7 @@ function App() {
         < AboutBioLife/>
       </section>
        <section ref={journeyRef}>
-        <SolutionPage />
+        <SolutionPage onDemoClick={() => scrollToSection(bookRef)}  />
       </section>
 
       
