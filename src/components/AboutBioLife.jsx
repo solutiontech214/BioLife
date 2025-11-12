@@ -18,6 +18,7 @@ const AboutBioLife = () => {
 
   return (
     <section className="relative w-full py-24 px-10 bg-gradient-to-br from-[#f9fafb] via-[#eef7fa] to-[#e3f2fd] overflow-hidden text-[#374151]">
+      
       {/* Soft blue background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(56,189,248,0.15),transparent_60%)] blur-3xl animate-pulse"></div>
 

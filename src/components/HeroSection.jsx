@@ -50,6 +50,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative flex flex-col md:flex-row items-center justify-between min-h-[90vh] w-full px-10 bg-gradient-to-r from-[#f0f9ff] via-[#e0f2fe] to-[#e0f7ff] overflow-hidden">
+      
       {/* Background glow layers */}
       {/* <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-sky-400/20 blur-[180px] rounded-full animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-cyan-300/20 blur-[160px] rounded-full animate-pulse"></div> */}
@@ -84,6 +85,19 @@ const HeroSection = () => {
           >
             Watch Demo
           </button>
+          <p className="text-center text-slate-600 mt-8">
+  Have feedback?{" "}
+  <a
+    href="https://forms.gle/aAzwMKAzwU8GjCY37"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-sky-600 font-semibold underline hover:text-sky-800 transition"
+  >
+    Click here
+  </a>{" "}
+  to let us know.
+</p>
+
         </div>
       </div>
 

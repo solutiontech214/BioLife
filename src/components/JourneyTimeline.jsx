@@ -12,7 +12,7 @@ const steps = [
   { title: "Detailed Design", desc: "Created 3D CAD models and actuator layouts.", details: "Engineered every joint and actuator connection precisely with material stress analysis and CAD integration.", image: "/Images/detailed.jpg" },
   { title: "Rendering", desc: "High-quality 3D visuals of the final exoskeleton.", details: "Rendered photorealistic models to visualize the final product aesthetics and mechanical detailing.", image: "/Images/f2.jpg" },
   { title: "Analysis & Simulation", desc: "Simulated mechanical and neural load performance.", details: "Used stress, thermal, and load simulations to verify reliability and comfort during real-world usage.", image: "/Images/analysis.jpg" },
-  { title: "Prototype & Testing", desc: "Built and tested the functional brain-controlled prototype.", details: "Developed a working prototype that successfully translated EEG signals into physical movement, marking a major BioLife milestone.", image: "/Images/prototype.png" },
+  { title: "Prototype & Testing", desc: "Built and tested the functional brain-controlled prototype.", details: "Developed a working prototype that successfully translated EEG signals into physical movement, marking a major BioLife milestone.", image: "/Images/image.png" },
 ];
 
 const fadeUp = {
